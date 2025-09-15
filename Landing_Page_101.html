@@ -1,0 +1,327 @@
+<!doctype html>
+<html lang="en" class="no-js">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>NHS Surrey & Borders – Volunteer Study (Hearing & Alzheimer’s)</title>
+  <meta name="description" content="Volunteer for safe NHS research into the link between hearing and Alzheimer’s. If you’re 60+ and don’t wear a hearing aid, you could earn £200." />
+  <meta name="theme-color" content="#005EB8" />
+  <style>
+    :root{
+      --nhs-blue:#005EB8;
+      --nhs-blue-700:#003F76;
+      --accent:#0072CE;
+      --green:#007F3B;
+      --text:#0B0C0C;
+      --muted:#505A5F;
+      --bg:#FFFFFF;
+      --panel:#F3F7FB;
+      --focus:#FFDD00;
+      --error:#B10E1E;
+      --radius:16px;
+      --shadow:0 10px 24px rgba(0,0,0,.06);
+      --fs-base:18px; /* large base size for readability */
+      --maxw:1120px;
+    }
+    @media (min-width: 1024px){
+      :root{ --fs-base:19px; }
+    }
+    html{ font-size: var(--fs-base); }
+    *, *::before, *::after{ box-sizing: border-box; }
+    body{
+      margin:0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+      color:var(--text);
+      background:var(--bg);
+      line-height:1.55;
+      -webkit-font-smoothing:antialiased;
+      text-rendering:optimizeLegibility;
+    }
+    a{ color:var(--accent); }
+    .skip-link{
+      position:absolute; left:-9999px; top:auto; width:1px; height:1px; overflow:hidden;
+    }
+    .skip-link:focus{ position:static; width:auto; height:auto; padding:.65rem 1rem; background:#fff; border:3px solid var(--focus); z-index:10; }
+    .topbar{
+      position:sticky; top:0; z-index:100;
+      background:#fff; border-bottom:1px solid #E5E7EB;
+    }
+    .wrap{ max-width:var(--maxw); margin-inline:auto; padding-inline:1rem; }
+    .row{ display:flex; align-items:center; justify-content:space-between; gap:1rem; }
+    .brand{
+      display:flex; align-items:center; gap:.75rem; padding:.75rem 0;
+    }
+    .nhs-badge{
+      display:inline-grid; place-items:center; font-weight:800; color:#fff;
+      background:var(--nhs-blue); border-radius:6px; padding:.2rem .5rem; letter-spacing:.5px;
+    }
+    .brand h1{ font-size:1.05rem; margin:0; font-weight:700; }
+    .cta-call{
+      display:inline-flex; align-items:center; gap:.5rem;
+      background:var(--nhs-blue); color:#fff; border:none; border-radius:999px;
+      padding:.8rem 1.1rem; font-weight:700; text-decoration:none; box-shadow: var(--shadow);
+    }
+    .cta-call:focus-visible, .btn:focus-visible, .control-btn:focus-visible{
+      outline:3px solid var(--focus); outline-offset:3px;
+    }
+    .controls{
+      display:flex; align-items:center; gap:.5rem; flex-wrap:wrap;
+    }
+    .control-btn{
+      background:#fff; border:1px solid #D0D7DE; border-radius:999px; padding:.5rem .8rem; cursor:pointer;
+    }
+    .hero{
+      background:linear-gradient(180deg, #F9FBFF 0%, #FFFFFF 100%);
+      padding:2rem 0 1rem;
+    }
+    .hero-grid{
+      display:grid; gap:1.25rem; align-items:center;
+      grid-template-columns: 1fr; 
+    }
+    @media (min-width: 900px){
+      .hero-grid{ grid-template-columns: 1.2fr .9fr; gap:2rem; }
+    }
+    .headline{
+      font-size: clamp(1.8rem, 1.35rem + 2.2vw, 2.8rem);
+      line-height:1.2; letter-spacing:.2px; margin: .25rem 0 .75rem;
+      font-weight:800; color:#1F2937;
+    }
+    .subhead{
+      color:var(--muted); font-size:1.05rem; margin:0 0 1.25rem;
+    }
+    .cta-row{ display:flex; gap:.8rem; flex-wrap:wrap; }
+    .btn{
+      display:inline-flex; align-items:center; gap:.55rem; font-weight:700;
+      border-radius:12px; padding:.9rem 1.1rem; text-decoration:none; border:2px solid transparent;
+      box-shadow: var(--shadow);
+    }
+    .btn-primary{ background:var(--nhs-blue); color:#fff; }
+    .btn-outline{ border-color:#B6C7DC; color:var(--nhs-blue); background:#fff; }
+    .photo-card{
+      background:#E8F0FA; border-radius:20px; padding:.5rem; box-shadow:var(--shadow);
+    }
+    .photo{
+      aspect-ratio: 16/10;
+      width:100%;
+      border-radius:16px;
+      background:#C7D7EA;
+      background-size:cover; background-position:center center;
+    }
+    /* Content sections */
+    section{ padding:2rem 0; }
+    .grid-2{
+      display:grid; gap:1.5rem; grid-template-columns:1fr; 
+    }
+    @media (min-width: 860px){
+      .grid-2{ grid-template-columns:1fr 1fr; }
+    }
+    h2{ font-size:1.5rem; margin:.25rem 0 1rem; }
+    ul.feature{ list-style:none; padding:0; margin:0; }
+    ul.feature li{
+      display:flex; gap:.75rem; align-items:flex-start; padding:.5rem 0; border-bottom:1px dashed #E5E7EB;
+    }
+    .icon{ width:22px; height:22px; flex:0 0 22px; }
+    .panel{ background:var(--panel); border-radius:16px; padding:1.25rem; }
+    .contact .panel p{ margin:.35rem 0; }
+    .footer{
+      background:#F7FAFC; border-top:1px solid #E5E7EB; padding:1.5rem 0 3rem;
+      color:#374151;
+    }
+    .foot-note{ font-size:.95rem; }
+    /* High-contrast and larger text toggles */
+    .high-contrast{
+      --text:#000;
+      --bg:#fff;
+      --panel:#fff;
+      --muted:#111;
+      --nhs-blue:#000;
+      --accent:#000;
+      --focus:#ff0;
+    }
+    .big-text{ font-size: calc(var(--fs-base) * 1.15); }
+    /* Reduced motion consideration */
+    @media (prefers-reduced-motion: no-preference){
+      .fade-in{ animation: fade .6s ease-out both; }
+      @keyframes fade { from{ opacity:0; transform:translateY(6px) } to{ opacity:1; transform:none } }
+    }
+  </style>
+  <script>
+    document.documentElement.classList.remove('no-js');
+    function setBgImage(){
+      const el = document.getElementById('heroPhoto');
+      // Placeholder gradient. Replace URL below with your image path for production.
+      const url = '';
+      if(url){
+        el.style.backgroundImage = 'url(' + url + ')';
+      }else{
+        // Keep soft gradient background if no image supplied
+        el.style.backgroundImage = 'linear-gradient(135deg,#dce9f7,#eef4fb)';
+      }
+    }
+    function toggleContrast(){
+      document.documentElement.classList.toggle('high-contrast');
+      localStorage.setItem('hc', document.documentElement.classList.contains('high-contrast') ? '1' : '0');
+    }
+    function toggleBigText(){
+      document.documentElement.classList.toggle('big-text');
+      localStorage.setItem('bt', document.documentElement.classList.contains('big-text') ? '1' : '0');
+    }
+    // Restore preferences
+    window.addEventListener('DOMContentLoaded', () => {
+      setBgImage();
+      if(localStorage.getItem('hc')==='1') document.documentElement.classList.add('high-contrast');
+      if(localStorage.getItem('bt')==='1') document.documentElement.classList.add('big-text');
+    });
+  </script>
+  <!-- Structured data for contact info -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Surrey & Borders Partnership NHS Foundation Trust",
+    "url": "https://www.sabp.nhs.uk/",
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "telephone": "+44-1372-216584",
+      "contactType": "research",
+      "email": "research@sabp.nhs.uk"
+    }
+  }
+  </script>
+</head>
+<body>
+  <a href="#main" class="skip-link">Skip to content</a>
+  <header class="topbar" role="banner">
+    <div class="wrap row">
+      <div class="brand" aria-label="NHS Surrey & Borders Partnership">
+        <span class="nhs-badge" aria-hidden="true">NHS</span>
+        <h1>Surrey &amp; Borders Partnership<br/><span style="font-weight:600;color:#4b5563;font-size:.95rem">NHS Foundation Trust</span></h1>
+      </div>
+      <div class="controls" role="group" aria-label="Display controls">
+        <button class="control-btn" type="button" onclick="toggleBigText()" aria-pressed="false">A<span aria-hidden="true" style="font-size:1.15em">A</span> Increase text</button>
+        <button class="control-btn" type="button" onclick="toggleContrast()" aria-pressed="false">High contrast</button>
+        <a class="cta-call" href="tel:+441372216584" aria-label="Call 01372 216584">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.62 10.79a15.464 15.464 0 006.59 6.59l2.2-2.2a1 1 0 011.02-.24c1.12.37 2.33.57 3.57.57a1 1 0 011 1V21a1 1 0 01-1 1C10.4 22 2 13.6 2 3a1 1 0 011-1h3.5a1 1 0 011 1c0 1.24.2 2.45.57 3.57a1 1 0 01-.24 1.02l-2.2 2.2z"/></svg>
+          <span>Call 01372 216584</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero">
+      <div class="wrap hero-grid">
+        <div class="copy fade-in">
+          <h2 class="headline">Help Us Understand the Link Between Hearing and Alzheimer’s</h2>
+          <p class="subhead">If you’re 60+ and don’t wear a hearing aid, you could earn <strong>£200</strong> by volunteering in safe NHS research.</p>
+          <div class="cta-row" role="group" aria-label="Primary actions">
+            <a class="btn btn-primary" href="tel:+441372216584" aria-label="Call now to volunteer">
+              <svg class="icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.62 10.79a15.46 15.46 0 006.59 6.59l2.2-2.2a1 1 0 011.02-.24c1.12.37 2.33.57 3.57.57a1 1 0 011 1V21a1 1 0 01-1 1C10.4 22 2 13.6 2 3a1 1 0 011-1h3.5a1 1 0 011 1c0 1.24.2 2.45.57 3.57a1 1 0 01-.24 1.02l-2.2 2.2z"/></svg>
+              Call Now
+            </a>
+            <a class="btn btn-outline" href="mailto:research@sabp.nhs.uk?subject=Volunteer%20enquiry%20-%20Hearing%20and%20Alzheimer%E2%80%99s" aria-label="Email us">
+              <svg class="icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M2 6a2 2 0 012-2h16a2 2 0 012 2v12a2 2 0 01-2 2H4a2 2 0 01-2-2V6zm2-.01V6l8 5 8-5v-.01H4z"/></svg>
+              Email Us
+            </a>
+          </div>
+        </div>
+        <div class="photo-card fade-in" aria-hidden="true">
+          <!-- Replace this with an actual image URL of friendly adults 60+ (no hearing aids visible) -->
+          <div class="photo" id="heroPhoto" role="img" aria-label="Friendly volunteers at an NHS clinic"></div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="wrap grid-2">
+        <div>
+          <h2>Who Can Volunteer?</h2>
+          <ul class="feature" aria-label="Eligibility criteria">
+            <li>
+              <svg class="icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M9 16.17l-3.88-3.88L3.7 13.7 9 19l12-12-1.41-1.41z"/></svg>
+              <p>Age <strong>60+</strong></p>
+            </li>
+            <li>
+              <svg class="icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M9 16.17l-3.88-3.88L3.7 13.7 9 19l12-12-1.41-1.41z"/></svg>
+              <p>Do <strong>NOT</strong> wear a hearing aid</p>
+            </li>
+          </ul>
+        </div>
+        <div>
+          <h2>Why Volunteer?</h2>
+          <ul class="feature" aria-label="Benefits of participating">
+            <li>
+              <svg class="icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm0 6a2 2 0 110 4 2 2 0 010-4z"/></svg>
+              <p>Receive a payment of up to <strong>£200</strong></p>
+            </li>
+            <li>
+              <svg class="icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 3C7.03 3 3 7.03 3 12s4.03 9 9 9 9-4.03 9-9-4.03-9-9-9zM8 13h8v2H8v-2zm0-4h8v2H8V9z"/></svg>
+              <p>Contribute to NHS research into the link between hearing and Alzheimer’s</p>
+            </li>
+            <li>
+              <svg class="icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 6 4 4 6.5 4 8.04 4 9.54 4.81 10.4 6.09 11.26 4.81 12.76 4 14.3 4 16.8 4 18.8 6 18.8 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+              <p>Support future generations</p>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="wrap grid-2">
+        <div>
+          <h2>What’s Involved?</h2>
+          <ul class="feature" aria-label="Study steps">
+            <li>
+              <svg class="icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 8a4 4 0 100 8 4 4 0 000-8zm0-6a1 1 0 011 1v2a1 1 0 11-2 0V3a1 1 0 011-1zm0 18a1 1 0 011 1v2a1 1 0 11-2 0v-2a1 1 0 011-1zM3 11a1 1 0 011-1h2a1 1 0 110 2H4a1 1 0 01-1-1zm16 0a1 1 0 011-1h2a1 1 0 110 2h-2a1 1 0 01-1-1z"/></svg>
+              <p>Total time: <strong>3–4 hours</strong></p>
+            </li>
+            <li>
+              <svg class="icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M19 3H5a2 2 0 00-2 2v14a2 2 0 002 2h14a2 2 0 002-2V5a2 2 0 00-2-2zm-2 14H7v-2h10v2zm0-4H7V7h10v6z"/></svg>
+              <p>1.5h screening visit with NHS team</p>
+            </li>
+            <li>
+              <svg class="icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 4a8 8 0 100 16 8 8 0 000-16zm3.5 8L10 15V9l5.5 3z"/></svg>
+              <p>1.5h brainwave test (listening to sounds + watching a silent movie)</p>
+            </li>
+            <li>
+              <svg class="icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 100 20A10 10 0 0012 2zm1 7a1 1 0 00-2 0v6a1 1 0 002 0V9zm-1 9.25a1.25 1.25 0 110-2.5 1.25 1.25 0 010 2.5z"/></svg>
+              <p><strong>Non-invasive</strong> &amp; completely safe</p>
+            </li>
+          </ul>
+        </div>
+        <div class="contact">
+          <div class="panel">
+            <h2>Ready to Volunteer?</h2>
+            <p><strong>Call us today:</strong> <a href="tel:+441372216584" aria-label="Call 01372 216584">01372 216584</a></p>
+            <p><strong>Email:</strong> <a href="mailto:research@sabp.nhs.uk">research@sabp.nhs.uk</a></p>
+            <form action="https://formspree.io/f/your-id" method="POST" aria-label="Expression of interest form" style="margin-top:1rem">
+              <label for="name">Name</label><br/>
+              <input id="name" name="name" type="text" autocomplete="name" required
+                     style="width:100%;padding:.8rem;border:1px solid #CBD5E1;border-radius:10px;margin:.35rem 0 1rem" />
+              <label for="phone">Phone</label><br/>
+              <input id="phone" name="phone" type="tel" autocomplete="tel" required
+                     style="width:100%;padding:.8rem;border:1px solid #CBD5E1;border-radius:10px;margin:.35rem 0 1rem" />
+              <label for="email">Email</label><br/>
+              <input id="email" name="email" type="email" autocomplete="email"
+                     style="width:100%;padding:.8rem;border:1px solid #CBD5E1;border-radius:10px;margin:.35rem 0 1rem" />
+              <label for="msg">Message (optional)</label><br/>
+              <textarea id="msg" name="message" rows="3"
+                        style="width:100%;padding:.8rem;border:1px solid #CBD5E1;border-radius:10px;margin:.35rem 0 1rem"></textarea>
+              <button class="btn btn-primary" type="submit">Send enquiry</button>
+              <p style="font-size:.9rem;color:#6B7280;margin-top:.5rem">Submitting this form sends your details to our team. We’ll only use them to contact you about this study.</p>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap">
+      <p class="foot-note"><strong>Accessibility:</strong> Use the “Increase text” and “High contrast” buttons in the top right. This page supports keyboard navigation and screen readers.</p>
+      <p class="foot-note">© Surrey &amp; Borders Partnership NHS Foundation Trust • This is an informational research recruitment page.</p>
+    </div>
+  </footer>
+</body>
+</html>
